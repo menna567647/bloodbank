@@ -1,61 +1,160 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Donation Requests Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Overview
 
-## About Laravel
+**Donation Requests Management System** is a Laravel-based web application designed to manage blood and general donation requests.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The system provides an **Admin Dashboard**, a **Client Interface**, and a **RESTful API**, with a notification system based on **Firebase Cloud Messaging (FCM)** and database storage.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Key Features
 
-## Learning Laravel
+### Admin Dashboard
+- View and manage all registered clients
+- Block / unblock clients
+- View and manage donation requests
+- Review and manage **reports** submitted by clients
+- Create and manage posts
+- Manage user roles and permissions using **Spatie Laravel Permission**
+- Receive and manage client messages
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Client Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Create donation requests
+- Receive notifications for donation requests that match their **blood type**
+- Report incorrect or fake donation requests
+- Browse categories and posts
+- Add posts to **favorites**
+- Manage personal profile information
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Notification System
+- Push notifications for mobile/API via **Firebase Cloud Messaging (FCM)**
+- Database-stored notifications for website users
+- Notifications delivered based on blood type and city
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## API
+- RESTful API for:
+  - Donation requests
+  - Categories
+  - Posts
+  - Users
+- Designed to support **mobile applications**
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Permissions & Translations
+- **Spatie Laravel Permission**  
+  Role-based access control for admins.
+  
+- **Spatie Laravel Translatable**  
+  Multi-language support for database content (categories).
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Tech Stack
+- **Backend:** Laravel (PHP)
+- **Frontend:** Blade
+- **Database:** MySQL
+- **Notifications:** Firebase Cloud Messaging (FCM)
+- **API Authentication:** Token-based authentication
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Packages Used
+- `spatie/laravel-permission`
+- `spatie/laravel-translatable`
+- Firebase Cloud Messaging (FCM)
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Installation
+### 1. Install Dependencies
+composer install
+npm install
+npm run 
+
+---
+
+## screenshots
+
+admin dashboard
+![dashboard ](screenshots/admin/dashboard/en.png)
+![dashboard ](screenshots/admin/dashboard/ar.png)
+
+---
+categories
+![categories ](screenshots/admin/categories/ar-categories.png)
+![categories ](screenshots/admin/categories/en-categories.png)
+
+---
+posts
+![posts ](screenshots/admin/posts/en-posts.png)
+![post-create ](screenshots/admin/posts/en-posts-create.png)
+![post-edit ](screenshots/admin/posts/en-posts-edit.png)
+
+---
+donation requests
+![donationrequests ](screenshots/admin/requests/en-donations.png)
+![donationrequest ](screenshots/admin/requests/en-donations-details.png)
+![donationrequest-edit ](screenshots/admin/requests/en-donation-edit.png)
+
+---
+clients 
+![clients ](screenshots/admin/clients/en-clients.png)
+![clientssearch ](screenshots/admin/clients/en-clients-search.png)
+
+---
+reports 
+![reports ](screenshots/admin/reports/en-reports.png)
+![report-delete](screenshots/admin/reports/en-reports-delete.png)
+
+---
+roles 
+![roles ](screenshots/admin/roles/en-roles.png)
+![roles ](screenshots/admin/roles/en-roles-create.png)
+
+------------------------------------------------
+clients images
+
+![home-page ](screenshots/client/en-home.png)
+
+---
+donationrequests 
+![client-donations ](screenshots/client/requests/en-client-donation-requests.png)
+![create-donation ](screenshots/client/requests/en-donation-create.png)
+![alldonations ](screenshots/client/requests/en-donation-requests.png)
+
+---
+posts 
+![posts ](screenshots/client/posts/en-posts.png)
+![add-to-favorite ](screenshots/client/posts/en-post-added-to-favorites.png)
+![client-favorite-posts ](screenshots/client/posts/en-posts-favorites.png)
+
+---
+notifications 
+![create-notifications ](screenshots/client/notifications/en-notifications.png)
+![notification-mark-as-read ](screenshots/client/notifications/en-notifications-marked-as-read.png)
+![notifications ](screenshots/client/notifications/en-notifications-requests.png)
+
+---
+reports 
+![create-report ](screenshots/client/reports/en-donation-request-report-create.png)
+![report-created ](screenshots/client/reports/en-report-created.png)
+
+---
+profile 
+![client-profile-edit ](screenshots/client/profile/en-profile-edit.png)
+![change-password ](screenshots/client/profile/en-change-password.png)
+![password-changed ](screenshots/client/profile/en-password-changed.png)
+
+---
+contact 
+![contact-form ](screenshots/client/contact/en-contact.png)
+![message-sent ](screenshots/client/contact/en-message-sent.png)
